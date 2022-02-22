@@ -18,6 +18,7 @@
 		520C5E1527C3D63200E841F3 /* ItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520C5E1327C3D63200E841F3 /* ItemTableCell.xib */; };
 		520C5E1727C3D7A900E841F3 /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C5E1627C3D7A900E841F3 /* ItemEntity.swift */; };
 		520C5E1927C3D82E00E841F3 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C5E1827C3D82E00E841F3 /* ItemModel.swift */; };
+		529FB1B527C517DE0095A4DE /* ModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529FB1B427C517DE0095A4DE /* ModifyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		520C5E1327C3D63200E841F3 /* ItemTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableCell.xib; sourceTree = "<group>"; };
 		520C5E1627C3D7A900E841F3 /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
 		520C5E1827C3D82E00E841F3 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		529FB1B427C517DE0095A4DE /* ModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,9 @@
 			children = (
 				520C5DFB27C3CEBB00E841F3 /* ViewController.swift */,
 				520C5DFD27C3CEBB00E841F3 /* Main.storyboard */,
-				520C5E0F27C3D47100E841F3 /* TabBarController.swift */,
+				529FB1B427C517DE0095A4DE /* ModifyViewController.swift */,
 				520C5E1127C3D5AF00E841F3 /* SubComponent */,
+				520C5E0F27C3D47100E841F3 /* TabBarController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				520C5E1727C3D7A900E841F3 /* ItemEntity.swift in Sources */,
 				520C5E1027C3D47100E841F3 /* TabBarController.swift in Sources */,
 				520C5DF827C3CEBB00E841F3 /* AppDelegate.swift in Sources */,
+				529FB1B527C517DE0095A4DE /* ModifyViewController.swift in Sources */,
 				520C5DFA27C3CEBB00E841F3 /* SceneDelegate.swift in Sources */,
 				520C5E1927C3D82E00E841F3 /* ItemModel.swift in Sources */,
 				520C5E1427C3D63200E841F3 /* ItemTableCell.swift in Sources */,

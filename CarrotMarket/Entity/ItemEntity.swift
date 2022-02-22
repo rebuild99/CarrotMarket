@@ -9,6 +9,7 @@ import Foundation
 
 
 struct ItemEntity {
+    var cellIndex: Int
     var itemImage: String
     var itemName: String
     var itemPrice: String
