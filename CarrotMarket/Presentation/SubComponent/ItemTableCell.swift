@@ -9,6 +9,7 @@ import UIKit
 
 protocol CellDelegate {
     func presentModifyView(_ cellIndex: Int)
+    func deleteCell(_ cellIndex: Int)
 }
 
 class ItemTableCell: UITableViewCell {
@@ -17,24 +18,42 @@ class ItemTableCell: UITableViewCell {
     static let identifier = "itemCell"
     
     var delegate: CellDelegate?
+    var index = 0
+    var tranType = ""
     
     @IBOutlet weak var cellIndex: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
-    @IBOutlet weak var btn: UIButton!
     
-    @IBAction func clieckedBtn(_ sender: UIButton) {
-        
-        let index = Int(cellIndex.text ?? "0") ?? 0
-        self.delegate?.presentModifyView(index)
+    // 변경버튼 선택
+    @IBAction func clieckedModifyBtn(_ sender: UIButton) {
+        self.delegate?.presentModifyView(self.index)
     }
     
-    func setupData(_ data: ItemEntity) {
-        cellIndex.text = String(data.cellIndex)
+    // 삭제버튼 선택
+    @IBAction func clickedDeleteBtn(_ sender: UIButton) {
+        self.delegate?.deleteCell(self.index)
+    }
+    
+    func setupData(_ data: ItemEntity, _ index: Int) {
+        
+        self.index = index
+        
+        //cellIndex.text = String(data.cellIndex)
+        cellIndex.text = String(self.index)
         itemImage.image = UIImage(systemName: data.itemImage)
         itemName.text = data.itemName
-        itemPrice.text = data.itemPrice
+        
+        itemPrice.text = DecimalWon(value: Int(data.itemPrice) ?? 0)
+    }
+    
+    func DecimalWon(value: Int) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))! + " 원"
+        
+        return result
     }
     
     override func awakeFromNib() {

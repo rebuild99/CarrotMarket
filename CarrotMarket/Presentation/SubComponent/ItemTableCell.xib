@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="itemName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-YC-eg6">
-                        <rect key="frame" x="125" y="10" width="78" height="37"/>
+                        <rect key="frame" x="125" y="10" width="78" height="37.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="itemPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzz-Ej-c0f">
-                        <rect key="frame" x="125" y="57" width="72" height="21"/>
+                        <rect key="frame" x="125" y="57.5" width="72" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,21 +35,31 @@
                             <constraint firstAttribute="width" constant="100" id="Cz9-hf-yQ6"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-WZ-sIt">
-                        <rect key="frame" x="330.5" y="10" width="48.5" height="27"/>
-                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="변경"/>
-                        <connections>
-                            <action selector="clieckedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DdU-c2-2ho"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-nG-bye">
-                        <rect key="frame" x="330.5" y="47" width="48.5" height="31"/>
-                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="삭제"/>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PvF-R2-Ftx">
+                        <rect key="frame" x="320.5" y="10" width="48.5" height="72"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-WZ-sIt">
+                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="31"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="변경"/>
+                                <connections>
+                                    <action selector="clieckedModifyBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lJE-Wi-THX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-nG-bye">
+                                <rect key="frame" x="0.0" y="41" width="48.5" height="31"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="삭제"/>
+                                <connections>
+                                    <action selector="clickedDeleteBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CpA-jH-ENE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="964-7n-ecp">
                         <rect key="frame" x="239" y="18" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,34 +70,35 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="sJr-dg-PBP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Axx-6j-ng9"/>
-                    <constraint firstItem="mwM-WZ-sIt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ieb-WF-BGt"/>
-                    <constraint firstAttribute="bottom" secondItem="LWc-nG-bye" secondAttribute="bottom" constant="10" id="b3N-Xy-ITx"/>
+                    <constraint firstAttribute="trailing" secondItem="PvF-R2-Ftx" secondAttribute="trailing" constant="20" id="DIb-hy-Spn"/>
                     <constraint firstItem="pfU-YC-eg6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bNT-ZM-3K1"/>
                     <constraint firstItem="Gzz-Ej-c0f" firstAttribute="leading" secondItem="sJr-dg-PBP" secondAttribute="trailing" constant="15" id="bin-e1-XXo"/>
+                    <constraint firstAttribute="bottom" secondItem="PvF-R2-Ftx" secondAttribute="bottom" constant="6" id="e9m-de-avL"/>
+                    <constraint firstItem="PvF-R2-Ftx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eU1-f9-bHa"/>
                     <constraint firstItem="pfU-YC-eg6" firstAttribute="leading" secondItem="sJr-dg-PBP" secondAttribute="trailing" constant="15" id="ijT-r4-R5Y"/>
-                    <constraint firstItem="LWc-nG-bye" firstAttribute="top" secondItem="mwM-WZ-sIt" secondAttribute="bottom" constant="10" id="jqJ-T5-3A6"/>
                     <constraint firstItem="sJr-dg-PBP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="liK-k6-nqq"/>
                     <constraint firstAttribute="bottom" secondItem="Gzz-Ej-c0f" secondAttribute="bottom" constant="10" id="paN-rd-pqM"/>
-                    <constraint firstAttribute="trailing" secondItem="LWc-nG-bye" secondAttribute="trailing" constant="10" id="v4I-q8-RcW"/>
                     <constraint firstAttribute="bottom" secondItem="sJr-dg-PBP" secondAttribute="bottom" constant="10" id="wRP-po-qbN"/>
-                    <constraint firstAttribute="trailing" secondItem="mwM-WZ-sIt" secondAttribute="trailing" constant="10" id="wUR-Kg-teU"/>
                     <constraint firstItem="Gzz-Ej-c0f" firstAttribute="top" secondItem="pfU-YC-eg6" secondAttribute="bottom" constant="10" id="zzT-yi-Yhu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <connections>
-                <outlet property="btn" destination="mwM-WZ-sIt" id="8jG-vA-keu"/>
                 <outlet property="cellIndex" destination="964-7n-ecp" id="Tc4-K0-Czg"/>
                 <outlet property="itemImage" destination="sJr-dg-PBP" id="fAa-oq-t1V"/>
                 <outlet property="itemName" destination="pfU-YC-eg6" id="Zwe-48-7Iw"/>
                 <outlet property="itemPrice" destination="Gzz-Ej-c0f" id="3bW-8H-3dY"/>
             </connections>
-            <point key="canvasLocation" x="68.840579710144937" y="82.366071428571431"/>
+            <point key="canvasLocation" x="17" y="35"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
