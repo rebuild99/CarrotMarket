@@ -42,6 +42,7 @@ class ItemModel {
         return itemArray[index]
     }
     
+    // MARK: - itemArray Count Get
     func getCount() -> Int {
         return itemArray.count
     }
