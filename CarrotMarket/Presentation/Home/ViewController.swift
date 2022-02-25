@@ -33,6 +33,7 @@ class ViewController: UIViewController{
     }
     
     
+    // MARK: - 등록버튼(+) 이벤트
     func floattingFirstBtn() {
         let actionButton = JJFloatingActionButton()
         actionButton.buttonColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
@@ -53,6 +54,7 @@ class ViewController: UIViewController{
     }
     
 
+    // MARK: - 사용안함
     func floattingSecondBtn() {
         let secondActionBtn = JJFloatingActionButton()
         
@@ -79,14 +81,11 @@ class ViewController: UIViewController{
 extension ViewController: UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(itemModel.getCount())
         return itemModel.getCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Model의 배열 index번호 update
-        // itemModel.updateIndex(indexPath.row)
-        
+                
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableCell.identifier, for: indexPath) as! ItemTableCell
         let cellItem = itemModel.getData(indexPath.row)
         
@@ -105,6 +104,7 @@ extension ViewController: CellDelegate, ModifyViewControllerDelegate {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let modifyVC = storyBoard.instantiateViewController(withIdentifier: "modifyViewController") as? ModifyViewController {
+            
             // 셀의 변경버튼 클릭 시 변경화면 출력
             modifyVC.delegate = self
             modifyVC.rowIndex = cellIndex
@@ -112,8 +112,9 @@ extension ViewController: CellDelegate, ModifyViewControllerDelegate {
             
             print(itemModel.getData(cellIndex))
             
-            modifyVC.itemName   = itemModel.getData(cellIndex).itemName
-            modifyVC.itemPrice  = itemModel.getData(cellIndex).itemPrice
+            modifyVC.itemImageName  = itemModel.getData(cellIndex).itemImage
+            modifyVC.itemName       = itemModel.getData(cellIndex).itemName
+            modifyVC.itemPrice      = itemModel.getData(cellIndex).itemPrice
             
             self.present(modifyVC, animated: true)
         }
@@ -125,7 +126,7 @@ extension ViewController: CellDelegate, ModifyViewControllerDelegate {
         viewWillAppear(true)
     }
     
-    // 변경화면>확인버튼 클릭
+    // 변경화면안에서 [확인] 버튼 클릭
     func passEntityData(_ tranType: String, _ entity: ItemEntity) {
         if(tranType == "I") {
             //등록모드

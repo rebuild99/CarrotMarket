@@ -21,7 +21,6 @@ class ItemTableCell: UITableViewCell {
     var index = 0
     var tranType = ""
     
-    @IBOutlet weak var cellIndex: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
@@ -39,15 +38,13 @@ class ItemTableCell: UITableViewCell {
     func setupData(_ data: ItemEntity, _ index: Int) {
         
         self.index = index
-        
-        //cellIndex.text = String(data.cellIndex)
-        cellIndex.text = String(self.index)
-        itemImage.image = UIImage(systemName: data.itemImage)
+        itemImage.image = UIImage(named: data.itemImage)
         itemName.text = data.itemName
-        
+        // 금액(',' 표현)
         itemPrice.text = DecimalWon(value: Int(data.itemPrice) ?? 0)
     }
     
+    // 금액(',' 표현) 함수
     func DecimalWon(value: Int) -> String{
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal

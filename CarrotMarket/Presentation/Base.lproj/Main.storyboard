@@ -19,9 +19,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ddo-NI-aiM" kind="relationship" relationship="viewControllers" id="CmE-lA-RNc"/>
-                        <segue destination="TOH-XP-Il8" kind="relationship" relationship="viewControllers" id="9Vf-ky-jGq"/>
-                        <segue destination="Ema-Yn-4OV" kind="relationship" relationship="viewControllers" id="dCv-q8-0Z3"/>
-                        <segue destination="J1S-rt-T9Q" kind="relationship" relationship="viewControllers" id="tgl-Ep-kQG"/>
                         <segue destination="QPC-TL-NmW" kind="relationship" relationship="viewControllers" id="WR5-T6-Mk2"/>
                     </connections>
                 </tabBarController>
@@ -46,7 +43,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYj-Pu-OEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2178" y="1592"/>
+            <point key="canvasLocation" x="-1651" y="883"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="orP-6H-rk2">
@@ -76,7 +73,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="bell.fill" catalog="system" id="2GK-I7-lxG">
+                            <barButtonItem title="Item" image="bell" catalog="system" id="2GK-I7-lxG">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
                             <barButtonItem title="Item" image="lineweight" catalog="system" id="aaK-7V-NGK">
@@ -93,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqn-0J-OY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1477" y="1592"/>
+            <point key="canvasLocation" x="-951" y="883"/>
         </scene>
         <!--Modify View Controller-->
         <scene sceneID="Uwp-zM-Peb">
@@ -126,21 +123,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-BV-QHW">
-                                <rect key="frame" x="320.5" y="256" width="48.5" height="31"/>
+                                <rect key="frame" x="323" y="256" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Wh-Ul-fgG"/>
+                                    <constraint firstAttribute="width" constant="46" id="8Rg-A9-DJh"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                <state key="normal" title="취소"/>
                                 <connections>
                                     <action selector="clickedCancel:" destination="OrM-AB-7ER" eventType="touchUpInside" id="i7v-DX-Ai4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-Rj-KRZ">
-                                <rect key="frame" x="260" y="256" width="48.5" height="31"/>
+                                <rect key="frame" x="260" y="256" width="46" height="30"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5El-kg-Cyz"/>
+                                    <constraint firstAttribute="height" constant="30" id="yGw-Ox-ZPD"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="clickedConfirm:" destination="OrM-AB-7ER" eventType="touchUpInside" id="tF8-js-nhV"/>
                                 </connections>
@@ -191,6 +194,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fieldItemImageName" destination="c7m-bd-gbo" id="TVN-uB-CXx"/>
                         <outlet property="fieldItemName" destination="hb2-Ut-Lkh" id="apo-q0-tqW"/>
                         <outlet property="fieldItemPrice" destination="3Js-H9-iNu" id="0tE-V8-qOL"/>
                         <outlet property="tranTypeText" destination="2CA-M5-U6E" id="Fzs-2N-iaa"/>
@@ -198,82 +202,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihf-Ba-s5u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-768" y="1592"/>
-        </scene>
-        <!--동네생활-->
-        <scene sceneID="B6r-jI-WKL">
-            <objects>
-                <viewController id="TOH-XP-Il8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FTb-D9-giH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aAf-Og-tIs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="동네생활" image="book.closed" catalog="system" id="G05-IL-zCk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lWJ-rk-Q4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-754" y="883"/>
-        </scene>
-        <!--내 근처-->
-        <scene sceneID="E4q-Tj-NRm">
-            <objects>
-                <viewController id="Ema-Yn-4OV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KDc-Ll-lcM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="MNh-cC-SKY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="내 근처" image="pin.circle" catalog="system" id="SpA-sc-XeX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wES-fw-GEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-77" y="883"/>
-        </scene>
-        <!--채팅-->
-        <scene sceneID="NnR-bx-cE5">
-            <objects>
-                <viewController id="J1S-rt-T9Q" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UKN-4N-m6x">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Yow-pI-MhL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="채팅" image="lasso" catalog="system" id="GNP-nk-Wv6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YPZ-Ko-xJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="613" y="881"/>
+            <point key="canvasLocation" x="-241" y="883"/>
         </scene>
         <!--나의 당근-->
         <scene sceneID="rH6-kF-uhL">
             <objects>
-                <viewController id="QPC-TL-NmW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileTableView" id="QPC-TL-NmW" customClass="ProfileViewController" customModule="CarrotMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y00-nm-1wP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="95B-xs-hpM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Nyw-LI-Fbp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nyw-LI-Fbp" firstAttribute="bottom" secondItem="95B-xs-hpM" secondAttribute="bottom" id="1Zs-zY-f9v"/>
+                            <constraint firstItem="95B-xs-hpM" firstAttribute="leading" secondItem="Nyw-LI-Fbp" secondAttribute="leading" id="2W5-d9-xtG"/>
+                            <constraint firstItem="95B-xs-hpM" firstAttribute="top" secondItem="Nyw-LI-Fbp" secondAttribute="top" id="706-im-lGH"/>
+                            <constraint firstItem="Nyw-LI-Fbp" firstAttribute="trailing" secondItem="95B-xs-hpM" secondAttribute="trailing" id="VRx-zw-bLR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="나의 당근" image="person" catalog="system" id="8YN-Dy-xG1"/>
+                    <connections>
+                        <outlet property="profileTV" destination="95B-xs-hpM" id="l61-xS-MZl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sco-zk-zfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="881"/>
+            <point key="canvasLocation" x="487" y="883"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bell.fill" catalog="system" width="128" height="124"/>
-        <image name="book.closed" catalog="system" width="115" height="128"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
-        <image name="lasso" catalog="system" width="128" height="118"/>
         <image name="lineweight" catalog="system" width="128" height="110"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="pin.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

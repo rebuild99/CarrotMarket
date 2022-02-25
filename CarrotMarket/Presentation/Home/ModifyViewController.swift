@@ -15,24 +15,30 @@ class ModifyViewController: UIViewController {
     
     var delegate: ModifyViewControllerDelegate?
     
-    var rowIndex = 0
-    var tranType = ""
-    var itemName = ""
-    var itemPrice = ""
+    var rowIndex    = 0
+    var tranType    = ""
     
+    var itemImageName   = ""
+    var itemName    = ""
+    var itemPrice   = ""
+    
+    @IBOutlet weak var fieldItemImageName: UITextField!
     @IBOutlet weak var fieldItemName: UITextField!
     @IBOutlet weak var fieldItemPrice: UITextField!
     @IBOutlet weak var tranTypeText: UILabel!
     
+    // MARK: - 변경화면 > 확인버튼 선택
     @IBAction func clickedConfirm(_ sender: UIButton) {
         
+        let modItemImageName = fieldItemImageName.text ?? ""
         let modItemName = fieldItemName.text ?? ""
         let modItemPrice = fieldItemPrice.text ?? ""
         
-        self.delegate?.passEntityData(tranType, ItemEntity(cellIndex: rowIndex, itemImage: "backward", itemName: modItemName, itemPrice: modItemPrice))
+        self.delegate?.passEntityData(tranType, ItemEntity(cellIndex: rowIndex, itemImage: modItemImageName, itemName: modItemName, itemPrice: modItemPrice))
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - 번경화면 > 취소버튼 선택
     @IBAction func clickedCancel(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -41,6 +47,7 @@ class ModifyViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.fieldItemImageName.text = self.itemImageName
         self.fieldItemName.text = self.itemName
         self.fieldItemPrice.text = self.itemPrice
         

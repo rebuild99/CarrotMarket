@@ -18,13 +18,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="itemName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-YC-eg6">
-                        <rect key="frame" x="125" y="10" width="78" height="37.5"/>
+                        <rect key="frame" x="125" y="10" width="200" height="37.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="13u-qv-PeQ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="itemPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzz-Ej-c0f">
-                        <rect key="frame" x="125" y="57.5" width="72" height="20.5"/>
+                        <rect key="frame" x="125" y="57.5" width="200" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="3XZ-Jk-pwF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +39,7 @@
                         <rect key="frame" x="10" y="10" width="100" height="68"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Cz9-hf-yQ6"/>
+                            <constraint firstAttribute="height" constant="68" id="zQx-Gi-bBB"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PvF-R2-Ftx">
@@ -60,13 +67,6 @@
                             </button>
                         </subviews>
                     </stackView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="964-7n-ecp">
-                        <rect key="frame" x="239" y="18" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="sJr-dg-PBP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Axx-6j-ng9"/>
@@ -85,7 +85,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
             <connections>
-                <outlet property="cellIndex" destination="964-7n-ecp" id="Tc4-K0-Czg"/>
                 <outlet property="itemImage" destination="sJr-dg-PBP" id="fAa-oq-t1V"/>
                 <outlet property="itemName" destination="pfU-YC-eg6" id="Zwe-48-7Iw"/>
                 <outlet property="itemPrice" destination="Gzz-Ej-c0f" id="3bW-8H-3dY"/>

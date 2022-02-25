@@ -9,28 +9,33 @@ import Foundation
 
 class ItemModel {
     
-    var itemArray:[ItemEntity] = []
+    var itemArray = [ItemEntity]()
     
     init() {
-        setData()
+        setItemData()
     }
     
     // MARK: - itemArray Set
-    func setData() {
+    func setItemData() {
         itemArray = [
-                    ItemEntity(cellIndex: 0, itemImage: "airplane.circle",  itemName: "갤럭시S21 판매", itemPrice: "1000000"),
-                    ItemEntity(cellIndex: 0, itemImage: "wifi.square",      itemName: "아이폰 13Pro 판매합니다", itemPrice: "1200000"),
-                    ItemEntity(cellIndex: 0, itemImage: "point.3.connected.trianglepath.dotted", itemName: "아이맥 M1 판매합니다", itemPrice: "2000000"),
+                    ItemEntity(cellIndex: 0, itemImage: "1",        itemName: "갤럭시S21 판매", itemPrice: "1000000"),
+                    ItemEntity(cellIndex: 0, itemImage: "2",        itemName: "아이폰 13Pro 판매합니다", itemPrice: "1200000"),
+                    ItemEntity(cellIndex: 0, itemImage: "3",        itemName: "아이맥 M1 판매합니다", itemPrice: "2000000"),
                     
-                    ItemEntity(cellIndex: 0, itemImage: "rectangle",    itemName: "아이패드 프로 5세대 버전 판매 ", itemPrice: "900000"),
-                    ItemEntity(cellIndex: 0, itemImage: "pause.circle", itemName: "itemName02", itemPrice: "0"),
-                    ItemEntity(cellIndex: 0, itemImage: "stop.circle",  itemName: "itemName03", itemPrice: "0"),
+                    ItemEntity(cellIndex: 0, itemImage: "4",        itemName: "아이패드 프로 5세대 버전 판매 ", itemPrice: "900000"),
+                    ItemEntity(cellIndex: 0, itemImage: "5",        itemName: "트랙패드 판매", itemPrice: "100000"),
+                    ItemEntity(cellIndex: 0, itemImage: "6",        itemName: "아이폰12 미니 블랙 판매합니다", itemPrice: "450000"),
 
-                    ItemEntity(cellIndex: 0, itemImage: "backward",     itemName: "itemName01", itemPrice: "0"),
-                    ItemEntity(cellIndex: 0, itemImage: "backward.end", itemName: "itemName02", itemPrice: "0"),
-                    ItemEntity(cellIndex: 0, itemImage: "play.slash",   itemName: "itemName03", itemPrice: "0")
+                    ItemEntity(cellIndex: 0, itemImage: "7",        itemName: "갤럭시 탭S8 wifi 256GB", itemPrice: "1500000"),
+                    ItemEntity(cellIndex: 0, itemImage: "8",        itemName: "애플펜슬 2세대", itemPrice: "120000"),
+                    ItemEntity(cellIndex: 0, itemImage: "9",        itemName: "32인치 모니터", itemPrice: "300000"),
+                    
+                    ItemEntity(cellIndex: 0, itemImage: "10",        itemName: "아이패드 미니6", itemPrice: "600000"),
+                    ItemEntity(cellIndex: 0, itemImage: "11",        itemName: "Macbook Pro 맥북프로 2019 고급형 i5 2.4GHz Ram16 ssd512 CTO (13인치)", itemPrice: "1180000"),
+                    ItemEntity(cellIndex: 0, itemImage: "12",        itemName: "에어팟3 Air pods 매개봉 새제품 2022년 1월제조", itemPrice: "220000"),
                     ]
     }
+    
     
     // MARK: - itemArray Get
     func getData(_ index: Int) -> ItemEntity {
@@ -42,6 +47,7 @@ class ItemModel {
     }
     
     public func updateData(_ index: Int, _ itemArray: ItemEntity) {
+        self.itemArray[index].itemImage = itemArray.itemImage
         self.itemArray[index].itemName = itemArray.itemName
         self.itemArray[index].itemPrice = itemArray.itemPrice
     }
