@@ -21,6 +21,7 @@ class ViewController: UIViewController{
         floattingFirstBtn()
     }
     
+    // MARK: - Table Set
     func setupTableView() {
         
         self.itemTableView.register(UINib(nibName: "ItemTableCell", bundle: nil), forCellReuseIdentifier: ItemTableCell.identifier)
